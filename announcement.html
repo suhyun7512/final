@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=5.0">
+        <title>공지사항</title>
+        <link rel="shortcut icon" type="image/x-icon" href="./images/idol data 2 title logo.png">
+        <link rel="stylesheet" type="text/css" href="./css/idol data 2/menu/Menu-2.css">
+        <link rel="stylesheet" type="text/css" href="./css/setting.css">
+        <link rel="stylesheet" type="text/css" href="./css/idol data 2/menu/Menu.css">
+        <link rel="stylesheet" type="text/css" href="./css/login/login.css">
+        <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+        <script type="text/javascript" src="./javascript/idol data 2/menu/menu-1.js"></script>
+        <script type="text/javascript" src="./javascript/login/pw-id.js"></script>
+        <script type="text/javascript" src="./javascript/onclink/onclink-system.js"></script>
+
+
+        <style>
+            .notice {
+                border: 1px solid #ccc;
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .notice-title {
+                cursor: pointer;
+                font-weight: bold;
+                text-align: left;
+            }
+
+            .notice-content {
+                max-height: 0;
+                overflow: hidden;
+                transition: max-height 0.5s ease;
+                
+            }
+
+            .notice-content p {
+                margin: 0;
+                text-align: left;
+            }
+        </style>
+    </head>
+    <body class="MainBody" onload="">
+        <nav class="custom-nav">
+        <div class="custom-logo">
+            <i class="bx bx-menu custom-menu-icon"></i>
+        </div>
+        <div class="custom-sidebar">
+            <div class="custom-logo">
+            <i class="bx bx-menu custom-menu-icon"></i>
+            <span class="custom-logo-name">ISEGYE IDOL</span>
+            </div>
+            <div class="custom-sidebar-content">
+            <ul class="custom-lists">
+                <li class="custom-list">
+                <a href="./idol-data-2.html" class="custom-nav-link">
+                    <i class="bx bx-home-alt icon"></i>
+                    <span class="custom-link"> &nbsp;&nbsp;홈</span>
+                </a>
+                </li>
+                <li class="custom-list">
+                <a href="./announcement.html" class="custom-nav-link">
+                    <i class="bx bx-bell icon"></i>
+                    <span class="custom-link"> &nbsp;&nbsp;공지사항</span>
+                </a>
+                </li>
+                <li class="custom-list">
+                <a href="./asd.html" class="custom-nav-link">
+                    <i class="bx bx-message-rounded icon"></i>
+                    <span class="custom-link"> &nbsp;&nbsp;채팅방</span>
+                </a>
+                </li>
+                <li class="custom-list">
+                <a href="./login.html" class="custom-nav-link">
+                    <i class="bx bx-cog icon"></i>
+                    <span class="custom-link"> &nbsp;&nbsp;로그인</span>
+                </a>
+                </li>
+            </ul>
+            <a href="./idol-data-2.html">
+                <img class="custom-img" src="./images/idol data 2 title logo.png" alt="Main logo">
+            </a>
+            </div>
+        </div>
+        </nav>
+        <section class="overlay"></section>
+        <center>
+            <div class="Main-Menu-div" id="main-menu-div">
+                <a href="./idol-data-2.html">
+                <img class="Main-logo" src="./images/main logo.png" alt="Main logo">
+                </a>
+                <!-- <a href="#none"><img class="Main-logo" src="./images/ISEGYE IDOL logo.png" alt="Main logo"></a> -->
+                <div class="Menu-main">
+                    <ul class="Menu-ul">
+                        <li><a href="./idol-data-2.html">홈</a></li>
+                        <li class="menu-margin"><a href="./announcement.html">공지사항</a></li>
+                        <li class="menu-margin"><a href="./asd.html">채팅방</a></li>
+                        <li class="menu-margin"><a href="./login.html">로그인</a></li>
+                    </ul>
+                </div>
+            </div>
+        </center>
+        <center>
+            <div style="background-color: #fff;" class="wdt85">
+                <div id="Member-introduction" class="wdt60" style="display: flex;align-items:end; border-bottom:2px solid #000; cursor: pointer; margin-top: 15px;">
+                    <img src="https://em-content.zobj.net/source/skype/289/loudspeaker_1f4e2.png" width="75px"><span style="font-size: 54px; font-weight: 900;">&nbsp;공지사항</span>
+                </div>
+                <div class="wdt60" style="background-image: linear-gradient( rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ),url(./images/ann.jpg); background-position: center; background-repeat: no-repeat; background-size: cover; height: 250px; border-bottom-left-radius: 25px; border-bottom-right-radius: 25px;">
+                    <span style="font-size: 48px; font-weight: bold; color: #fff; height: 100%; width: 100%; display: flex; justify-content: center; align-items: center;">이세돌 공지사항</span>
+                </div>
+                <div style="height: 20px;"></div>
+
+                <div onclick="toggleContent('notice1')" class="notice" id="notice1">
+                    <div>
+                        <div class="notice-title" style="font-size: 24px; font-weight: bold;">왁타버스 아프리카로 넘어가다.</div>
+                        <div class="notice-content">
+                        <p style="font-weight: 600; color: #505050;"><br>24년 1월 5일 21시 32분<br><br>21시 30분에 트위치 방송으로 코리아 트위치 서비스 종료로 인해 플랫폼을 강제로 이동해야해서 여러 고민 끝에 방송에 공개를 하였다.<br>우왁굳은 오랜 고민 끝에 결정을 하였고 1월 5일 21시 30분에 "오랜 고민 끝에 아프리카로 이동합니다." 라고 방송에 언급을 하였다.<br> 해당 방송 시청자 수는 5.5만명을 가볍게 넘겼으며 이세돌 방송 까지 포함하면 대략 7~8만명으로 추청이 된다.<br>안좋게 보는 시선도 있지만 우왁굳이 트위치로 오기 전에 아프리카 생활을 한것을 생각하면 이해가 되는 부분이다.<br> 아무것도 모르는 네이버 "치지직" 보다는 해본 플랫폼을 선택 한것으로 보인다.</p>
+                        </div>
+                    </div>
+                  </div>
+                
+                  <div onclick="toggleContent('notice2')" class="notice" id="notice2">
+                    <div>
+                        <div class="notice-title" style="font-size: 24px; font-weight: bold;">이세계 아이돌 구독자 수 최초 40만명 돌파 그 이름 고세구!</div>
+                        <div class="notice-content">
+                        <p style="font-weight: 600; color: #505050;"><br>24년 1월 7일<br><br>19시에 이세계 아이돌 유튜브 채널 최초로 40만명 돌파<br>이것은 릴파,아이네 보다도 높은 구독자를 가졌으며<br>세계 최초 킹받는 아이돌을 성공한 것이다.</p>
+                        </div>
+                    </div>
+                  </div>
+                
+                  <div onclick="toggleContent('notice3')" class="notice" id="notice3">
+                    <div>
+                        <div class="notice-title" style="font-size: 24px; font-weight: bold;">왁타버스 뮤직 어워드 2023 여자 가수 수상자</div>
+                        <div class="notice-content">
+                        <p style="font-weight: 600; color: #505050;"><br>(영상 풀버전 날짜 기준)24년 1월 6일<br><br>왁타버스 뮤직어워즈가 진행이 되었다.<br>매우 치열했고 그 인기는 어마어마 했다.<br>치열한 경쟁속 여자 가수 수상자가 정해졌다.<br>그 이름 이세계 아이돌 "징버거"가 수상하게 되었다.<br>총합 조회수 4000만회,곡갯수만 무려 17개,대표곡으로는 stay가 있다.<br>징버거는 대단하다.(네 사심입니다.)</p>
+                        </div>
+                    </div>
+                  </div>
+                  <div style="height: 50px;"></div>
+                  <!-- <div onclick="toggleContent('notice4')" class="notice" id="notice4">
+                    <div>
+                        <div class="notice-title" style="font-size: 24px; font-weight: bold;">공지사항 제목 4</div>
+                        <div class="notice-content">
+                        <p style="font-weight: 600; color: #505050;"><br>다섯 번째 공지사항 내용이 이곳에 나타납니다.</p>
+                        </div>
+                    </div>
+                  </div>
+                
+                  <div onclick="toggleContent('notice5')" class="notice" id="notice5">
+                    <div>
+                        <div class="notice-title" style="font-size: 24px; font-weight: bold;">공지사항 제목 5</div>
+                        <div class="notice-content">
+                        <p style="font-weight: 600; color: #505050;"><br>마지막 공지사항 내용이 이곳에 나타납니다.</p>
+                        </div>
+                    </div> -->
+                </div>
+            </div>
+        </center>
+        <div style="height: 20px;"></div>
+
+        <div style="height: 360px;"></div>
+        <script>
+            let currentOpenNotice = null;
+        
+            function toggleContent(noticeId) {
+              const content = document.getElementById(noticeId).querySelector('.notice-content');
+              
+              if (currentOpenNotice && currentOpenNotice !== content) {
+                currentOpenNotice.style.maxHeight = '0px';
+              }
+        
+              content.style.maxHeight = content.style.maxHeight === '0px' ? content.scrollHeight + 'px' : '0px';
+              currentOpenNotice = content.style.maxHeight !== '0px' ? content : null;
+            }
+          </script>
+    </body>
+</html>

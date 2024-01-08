@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    #flag {
+      width: 500px;
+      height: 56px;
+      box-sizing: content-box;
+      padding-top: 15px;
+      position: relative;
+      background: pink;
+      color: white;
+      font-size: 11px;
+      letter-spacing: 0.2em;
+      text-align: center;
+      text-transform: uppercase;
+    }
+    #flag:after {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 0;
+      height: 0;
+      border-top: 25px solid #ffffff;
+      border-left: 250px solid transparent;
+      border-right: 250px solid transparent;
+    }
+    </style>
+</head>
+<body>
+    <div id="flag"></div>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" type="text/css" href="./css/setting.css">
+    <link rel="stylesheet" type="text/css" href="./css/login/login.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+</head>
+
+<body>
+    <div class="login-div">
+        <div class="login-win">
+            <form id="regForm">
+                <p class="login-h1">이세계 아이돌과 함께</p>
+                <p id="join-p">이파리가 되기 위한 한걸음!!</p>
+                <div class="input-box">
+                    <input type="text" id="Username" name="Username" placeholder="이름 입력" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="input-box">
+                    <input type="text" id="regUsername" name="loginUsername" placeholder="이메일 입력" required>
+                    <i class="bx bxs-user"></i>
+                </div>
+                <div class="input-box">
+                    <input id="regPassword" name="loginPassword" type="password" placeholder="비밀번호 입력" required>
+                    <i onclick="myFunction1()" class="bx bxs-lock-alt"></i>
+                </div>
+                <button type="button" class="login-btn">이세계와 함께하기</button>
+            </form>
+        </div>
+    </div>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-app.js";
+        import { getFirestore, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-firestore.js";
+
+        import { getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword, updateProfile, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.7.0/firebase-auth.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyDXlanQ8IBM_LE9_ZEJjjVkTr6eMPgPhok",
+            authDomain: "project1-b9190.firebaseapp.com",
+            databaseURL: "https://project1-b9190-default-rtdb.firebaseio.com/",
+            projectId: "project1-b9190",
+            storageBucket: "project1-b9190.appspot.com",
+            messagingSenderId: "247694228436",
+            appId: "1:247694228436:web:600a20ece18d5025383441",
+            measurementId: "G-WE3STCWPY4"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const firestore = getFirestore(app);
+        const auth = getAuth(app);
+
+        $('.login-btn').on('click', async function (event) {
+            event.preventDefault();
+
+            var email = $('#regUsername').val();
+            var password = $('#regPassword').val();
+            var name = $('#Username').val();
+
+            try {
+                const result = await createUserWithEmailAndPassword(auth, email, password);
+
+                var userinfo = { name: name, email: email };
+                await setDoc(doc(collection(firestore, 'user'), result.user.uid), userinfo);
+
+
+                alert("회원가입에 성공하셨습니다.");
+
+                await updateProfile(result.user, { displayName: name });
+
+                console.log(result.user);
+                location.href = "./login.html";
+            } catch (error) {
+                console.log('error', error);
+                const errorCode = error.code;
+                const errorMessage = error.message;
+
+                if (errorCode === "auth/weak-password") {
+                    alert("비밀번호는 6자리 이상이어야 합니다.");
+                } else if (errorCode === "auth/email-already-in-use") {
+                    alert("이미 사용 중인 이메일입니다.");
+                } else {
+                    alert("오류가 발생했습니다. 다시 시도해주세요.");
+                }
+            }
+        });
+        export { auth };
+    </script>
+</body>
+
+</html>
