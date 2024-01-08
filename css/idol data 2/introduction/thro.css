@@ -1,0 +1,16 @@
+
+.thro-content {
+    display: none;
+}
+
+.thro-content.active {
+    display: block;
+}
+
+.thro-content1 {
+    display: none;
+}
+
+.thro-content1.active {
+    display: block;
+}
